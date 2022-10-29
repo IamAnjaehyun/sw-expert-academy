@@ -7,18 +7,28 @@ public class D2_1926 {
         Scanner sc = new Scanner(System.in);
         int T;
         T = sc.nextInt();
+        int num;
         for (int tc = 1; tc <= T; tc++) {
-            String num = String.valueOf(tc);
-            int cnt=0;
-            for(int i=0; i<=num.length(); i++){
-                if(num.charAt(i) == '3' ||num.charAt(i) == '3' ||num.charAt(i) == '9'){
-                    cnt++;
+            num = tc;
+            int a = num / 10;
+            int b = num % 10;
+
+            if (a == 3 || a == 6 || a == 9) {
+                if (b == 3 || b == 6 || b == 9) {
+                    System.out.print("-- ");
+                    continue;
                 }
+                System.out.print("- ");
+                continue;
             }
-            if(cnt == 0) System.out.print(cnt);
-            else if(cnt == num.length()){
-                
+
+            if (b == 3 || b == 6 || b == 9) {
+                System.out.print("- ");
+                continue;
             }
+
+            System.out.print(num + " ");
+
         }
     }
 }
