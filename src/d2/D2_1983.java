@@ -3,13 +3,13 @@ package d2;
 import java.util.*;
 
 public class D2_1983 {
-    static String score[] = {"A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0"};
+    static String score[] = {"D0", "C-", "C0", "C+", "B-", "B0", "B+", "A-", "A0", "A+"};
+
     public static void main(String args[]) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int T;
-        T = sc.nextInt();
+        int T = sc.nextInt();
 
-        for (int tc = 0; tc < T; tc++) {
+        for (int tc = 1; tc <= T; tc++) {
             int std = sc.nextInt(); //학생
             int stdNum = sc.nextInt(); //학생번호
 
@@ -24,17 +24,14 @@ public class D2_1983 {
                 result[i] = sum;
                 if (i + 1 == stdNum) stdScore = sum;
             }
-            Arrays.sort(result, Collections.reverseOrder());
+            Arrays.sort(result);
 
-            int index = 0;
-            for (int i = 0; i < result.length; i++) {
-                if (result[i] == stdScore) index = i;
-            }
-            index = index / (std / 10);
+            int rank = 0;
+            for (int i = 0; i < result.length; i++) if (result[i] == stdScore) rank = i;
+            rank /= (std / 10);
 
-            System.out.printf("#%d %s\n", tc, score[index]);
+            System.out.printf("#%d %s\n", tc, score[rank]);
         }
-
     }
 }
 
