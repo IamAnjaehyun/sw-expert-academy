@@ -7,9 +7,7 @@ public class D2_1948 {
 
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
-//        int[] month = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
         int[] day = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-//        System.out.println(month[1]);
         for (int tc = 1; tc <= T; tc++) {
             int m1 = sc.nextInt()-1;
             int d1 = sc.nextInt();
